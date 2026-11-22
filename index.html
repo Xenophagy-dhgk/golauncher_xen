@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Go Launcher</title>
+
+    <!-- PWA (Add to Home Screen) -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Go Launcher">
+
+    <!-- Favicon & Homescreen icon -->
+    <link rel="icon" type="image/png" sizes="32x32"
+          href="https://lh3.googleusercontent.com/d/1ozVmhE1GJH9EKYkTSSqrJ362kOOrnvJB=w32">
+    <link rel="icon" type="image/png" sizes="192x192"
+          href="https://lh3.googleusercontent.com/d/1ozVmhE1GJH9EKYkTSSqrJ362kOOrnvJB=w192">
+    <link rel="apple-touch-icon" sizes="180x180"
+          href="https://lh3.googleusercontent.com/d/1ozVmhE1GJH9EKYkTSSqrJ362kOOrnvJB=w180">
+
+    <style>
+        /* ============================================
+           UKURAN POTONGAN HEADER
+           Ubah 1 nilai ini saja kalau mau geser potongan.
+           ============================================ */
+        :root {
+            --crop-top: 45px;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            height: 100dvh; /* Fix anti-geser di browser HP */
+            overflow: hidden;
+            background-color: #ffffff;
+            -webkit-tap-highlight-color: transparent;
+            overscroll-behavior: none;
+        }
+
+        /* Wrapper mengunci ukuran layar penuh */
+        .wrapper {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        /* iframe dinaikkan sebanyak --crop-top, lalu diimbangi padding-top */
+        iframe {
+            position: absolute;
+            top: calc(var(--crop-top) * -1);
+            left: 0;
+            width: 100%;
+            height: calc(100% + var(--crop-top));
+            padding-top: var(--crop-top);
+            border: none;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <!-- PERHATIKAN: Ada tambahan ?v=1 di akhir URL untuk anti-cache -->
+        <iframe
+            src="https://script.google.com/macros/s/AKfycbyFo5eqoHD2YL0UPvSFpsYUR_dfaj4ArWOds3R2heoeUq7iNWiWq76TOlcI9CJPQmxo/exec?v=1"
+            title="Go Launcher"
+            allow="clipboard-read; clipboard-write; fullscreen; autoplay"
+            referrerpolicy="no-referrer-when-downgrade"
+            loading="eager"
+        ></iframe>
+    </div>
+
+</body>
+</html>
