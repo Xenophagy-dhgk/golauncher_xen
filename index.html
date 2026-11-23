@@ -10,7 +10,7 @@
     <link rel="apple-touch-icon" href="https://lh3.googleusercontent.com/d/1ozVmhE1GJH9EKYkTSSqrJ362kOOrnvJB=w180">
 
     <style>
-        /* 1. Reset layar agar pas dan tidak bisa di-scroll */
+        /* 1. Reset layar */
         html, body {
             margin: 0;
             padding: 0;
@@ -18,17 +18,17 @@
             height: 100dvh; /* Anti-geser di HP */
             overflow: hidden;
             background-color: #ffffff;
-            overscroll-behavior: none;
         }
 
-        /* 2. Pengaturan Iframe & Potongan Header 45px */
+        /* 2. Iframe & Potongan Header 45px */
         iframe {
             position: absolute;
             top: -45px; /* Tarik ke atas 45px */
             left: 0;
             width: 100%;
-            height: calc(100% + 45px); /* Tambah tinggi 45px agar bawah tetap penuh */
+            height: calc(100% + 45px); /* Tambah tinggi 45px agar bawah tetap pas */
             padding-top: 45px; /* Dorong konten asli kembali ke bawah */
+            box-sizing: border-box; /* SANGAT PENTING: Agar tinggi total tidak membengkak */
             border: none;
             display: block;
         }
@@ -36,9 +36,8 @@
 </head>
 <body>
 
-    <!-- Iframe langsung diletakkan di body -->
     <iframe 
-        src="https://script.google.com/macros/s/AKfycbyFo5eqoHD2YL0UPvSFpsYUR_dfaj4ArWOds3R2heoeUq7iNWiWq76TOlcI9CJPQmxo/exec?v=1" 
+        src="https://script.google.com/macros/s/AKfycbyFo5eqoHD2YL0UPvSFpsYUR_dfaj4ArWOds3R2heoeUq7iNWiWq76TOlcI9CJPQmxo/exec?v=2" 
         title="Go Launcher" 
         allow="clipboard-read; clipboard-write; fullscreen; autoplay">
     </iframe>
